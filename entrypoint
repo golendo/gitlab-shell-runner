@@ -1,0 +1,5 @@
+#! /bin/sh
+
+gitlab-runner register -n --name shell-runner --url $1 --registration-token $2 --executor shell
+
+gitlab-runner run --user=gitlab-runner --working-directory=/home/gitlab-runner
