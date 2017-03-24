@@ -22,4 +22,6 @@ RUN echo 'gitlab-runner ALL=(ALL) NOPASSWD: /usr/bin/docker' >> /etc/sudoers
 COPY entrypoint /
 RUN chmod +x /entrypoint
 
+ENV RUNNER_NAME="shell-runner"
+
 ENTRYPOINT ["/usr/bin/dumb-init", "/entrypoint"]

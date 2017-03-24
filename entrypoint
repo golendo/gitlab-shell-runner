@@ -1,5 +1,7 @@
-#! /bin/sh
+#! /bin/sh -e
 
-gitlab-runner register -n --name shell-runner --url $1 --registration-token $2 --executor shell
+trap 'gitlab-runner unregister' INT TERM EXIT
+
+gitlab-runner register -n --url $1 --registration-token $2 --executor shell
 
 gitlab-runner run --user=gitlab-runner --working-directory=/home/gitlab-runner
