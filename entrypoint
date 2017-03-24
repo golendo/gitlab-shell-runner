@@ -1,6 +1,6 @@
 #! /bin/sh -e
 
-trap 'gitlab-runner unregister' INT TERM EXIT
+trap "gitlab-runner unregister -c /etc/gitlab-runner/config.toml -n $RUNNER_NAME" INT TERM EXIT
 
 gitlab-runner register -n --url $1 --registration-token $2 --executor shell
 

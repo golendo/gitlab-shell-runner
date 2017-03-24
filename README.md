@@ -10,5 +10,7 @@ docker service create \
 gitlab-shell-runner:latest http://git.example.org YourGitlabToken
 ```
 
+You can also use all gitlab-runner environment variables like RUNNER_NAME or RUNNER_TAG_LIST.
+
 By running the gitlab-runner on the manager nodes, we can easily manage our swarm.
 So it's easy to create images and update services.
