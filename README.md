@@ -7,7 +7,7 @@ docker service create \
 --constraint 'node.role == manager' \
 --name gitlab-shell-runner \
 --mount type=bind,source=/var/run/docker.sock,destination=/var/run/docker.sock \
-gitlab-shell-runner:latest http://git.example.org YourGitlabToken
+golendo/gitlab-shell-runner:latest http://git.example.org YourGitlabToken
 ```
 
 You can also use all gitlab-runner environment variables like RUNNER_NAME or RUNNER_TAG_LIST.
